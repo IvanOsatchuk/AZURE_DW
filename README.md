@@ -11,7 +11,7 @@ FROM
 	 sys.pdw_table_distribution_properties ptdp
 JOIN sys.objects o ON ptdp.object_id = o.object_id
 WHERE 
-	 ptdp.object_id = object_id('datamonster.entregas') --Nome da tabela
+	 ptdp.object_id = object_id('Nome da tabela') --Nome da tabela
 
 
 #Query para acompanhar as distribuições
@@ -31,7 +31,7 @@ FROM
 	  JOIN sys.objects as o
 	  ON TMap.object_id = o.object_id
 WHERE 
-	  o.object_id = object_id('datamonster.entregas')  --nome tabela
+	  o.object_id = object_id('Nome da tabela')  --nome tabela
 ORDER BY distribution_id
 
 
@@ -46,7 +46,7 @@ FROM
 	  JOIN sys.dm_pdw_request_steps rs
 	  ON er.request_id = rs.request_id
 WHERE 
-	  er.[label] = 'STATEMENT:DemoQuery';
+	  er.[label] = 'Label da Query';
 	  
 	  
 #Query para analisar execusões de query pelo label
